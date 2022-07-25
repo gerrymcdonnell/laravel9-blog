@@ -22,6 +22,14 @@ Route::get('/', function () {
 });
 
 
+//single lsiting
+Route::get('/listings/{id}', function ($id) {
+    return view('listing',[
+        'listing'=>Listing::find($id)
+    ]);
+});
+
+
 
 //examples
 Route::get('/test', function () {

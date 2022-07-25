@@ -7,8 +7,6 @@
 im a test var
 {{$test}}
 
-dd of listings
-
 
 <hr>
 
@@ -18,7 +16,11 @@ dd of listings
 @foreach ($listings as $listing)
     <h3>{{$listing['id']}}</h3>
     
-    <h2>{{$listing['title']}}</h2>
+    <h2>
+        <a href ="./listings/{{$listing['id']}}">        
+        {{$listing['title']}}
+        </a>
+    </h2>
     
     <p>
         {{$listing['description']}}
