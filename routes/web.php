@@ -18,16 +18,16 @@ Route::get('/', function () {
     return view('listings',[
         'heading'=>'Latest listings',
         'listings'=>[
-        [
-            'id'=>1,
-            'title'=>'listing one',
-            'description'=>'dfdsfdsfdsfds'
-        ],
-        [
-            'id'=>2,
-            'title'=>'listing two',
-            'description'=>'desc two'
-        ]
+            [
+                'id'=>1,
+                'title'=>'listing one',
+                'description'=>'dfdsfdsfdsfds'
+            ],
+            [
+                'id'=>2,
+                'title'=>'listing two',
+                'description'=>'desc two'
+            ]
     ]
 ]);
 });
