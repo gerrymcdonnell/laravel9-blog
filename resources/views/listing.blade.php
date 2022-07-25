@@ -2,12 +2,8 @@
 
 @section('content')
 
-    <h3>{{$listing['id']}}</h3>    
-    <h2>
-       
-        {{$listing['title']}}
-        
-    </h2>
+    <h1>{{$listing->title}}</h1>    
+
     
     <p>
         {{$listing['description']}}
