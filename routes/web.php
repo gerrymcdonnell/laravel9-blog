@@ -44,7 +44,11 @@ Route::delete('/listings/{listing}',[ListingController::class, 'destroy'] );
 //show register
 Route::get('/register',[UserController::class, 'create'] );
 
+Route::post('/users',[UserController::class, 'store'] );
 
+
+//logout
+Route::post('/logout',[UserController::class, 'logout'] );
 
 
 

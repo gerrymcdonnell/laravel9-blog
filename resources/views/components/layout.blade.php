@@ -35,6 +35,31 @@
                 ><img class="w-24" src={{asset('images/logo.png')}} alt="" class="logo"
             /></a>
             <ul class="flex space-x-6 mr-6 text-lg">
+                
+                <!--loggedin users see below-->
+                @auth
+                <li>
+                    <span class="font-bold uppercase">
+                        Welcome  {{auth()->user()->name}} 
+                    </span>
+                </li>
+                <li>
+                    <a href="/listings/manage" class="hover:text-laravel"
+                        ><i class="fa-solid fa-user-plus"></i> manage listings</a
+                    >
+                </li>
+
+                <li> 
+                    <form class="inline" method="POST" action="/logout">
+                        @csrf
+                        <button type="submit">
+                            <i class="fa-solid fa-door-closed"></i>Logout
+                        </button>
+                    </form>
+                </li>
+
+                @else
+                <!--non loggedin users see below-->
                 <li>
                     <a href="/register" class="hover:text-laravel"
                         ><i class="fa-solid fa-user-plus"></i> Register</a
@@ -46,6 +71,9 @@
                         Login</a
                     >
                 </li>
+                @endauth
+                <!--end auth section-->
+
             </ul>
         </nav>
 
