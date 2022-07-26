@@ -18,10 +18,10 @@ class CreateListingsTable extends Migration
             $table->string('title');
             $table->string('tags');
             $table->string('company');
-            $table->string('location');
-            $table->string('email');
-            $table->string('website');
-            $table->longText('description');
+            $table->string('location')->nullable();
+            $table->string('email')->nullable();
+            $table->string('website')->nullable();
+            $table->longText('description')->nullable();
             $table->timestamps();
         });
     }
