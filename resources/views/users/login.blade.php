@@ -20,7 +20,7 @@
                                 type="email"
                                 class="border border-gray-200 rounded p-2 w-full"
                                 name="email"
-                                value="bob@bob.com"
+                                value="ged@ged.com"
                             />
                             <!--error directive -->
                             @error('email')

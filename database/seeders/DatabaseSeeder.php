@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use App\Models\Listing;
+use App\Models\User;
 
 class DatabaseSeeder extends Seeder
 {
@@ -14,30 +15,27 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-         \App\Models\User::factory(10)->create();
+         //create 10 users
+         //User::factory(10)->create();
 
-        //use the factory to create listings
-         Listing::factory(6)->create();
+         //create a default user to login
+         User::factory()->create([
+            'name'=>'ged',
+            'email'=>'ged@ged.com',
+            'password'=>bcrypt('123456')
+         ]);
 
-         /*Listing::create([
-            'title'=>'my job title',
-            'tags'=>'tag1,tag2',
-            'company'=>'acme company',
-            'location'=>'boston',
-            'email'=>'email@email.com',
-            'website'=>'http://www.website.com',
-            'description'=>'fdgfdgfgfgdfgfdg'
+         $user=User::factory()->create([
+            'name'=>'John doe',
+            'email'=>'john@gmail.com'
          ]);
 
 
-         Listing::create([
-            'title'=>'my job title2',
-            'tags'=>'tag1,tag2',
-            'company'=>'acme company2',
-            'location'=>'boston',
-            'email'=>'email@email.com',
-            'website'=>'http://www.website.com',
-            'description'=>'fdgfdgfgfgdfgfdg2'
-         ]);*/
+
+        //use the factory to create listings
+         Listing::factory(6)->create([
+            'user_id'=>$user->id
+         ]);
+
     }
 }

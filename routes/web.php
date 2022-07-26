@@ -22,6 +22,10 @@ Route::get('/', [ListingController::class, 'index'] );
 
 //->middleware('auth'); will make user be authed
 
+
+//managelistings
+Route::get('/listings/manage',[ListingController::class, 'manage'] )->middleware('auth');
+
 //show create form
 Route::get('/listings/create', [ListingController::class, 'create'] )->middleware('auth');
 
@@ -38,21 +42,24 @@ Route::get('/listings/{listing}/edit',[ListingController::class, 'edit'] )->midd
 Route::put('/listings/{listing}',[ListingController::class, 'update'])->middleware('auth');;
 
 //delete
-Route::delete('/listings/{listing}',[ListingController::class, 'destroy'] )->middleware('auth');;
+Route::delete('/listings/{listing}',[ListingController::class, 'destroy'] )->middleware('auth');
+
+
 
 
 //users
 //show register
-Route::get('/register',[UserController::class, 'create'] );
+Route::get('/register',[UserController::class, 'create'])->middleware('guest');
 
 Route::post('/users',[UserController::class, 'store'] );
 
 //logout
 Route::post('/logout',[UserController::class, 'logout'] )->middleware('auth');
 
-Route::get('/login',[UserController::class, 'login'] )->name('login');
+Route::get('/login',[UserController::class, 'login'] )->name('login')->middleware('guest');
 
 Route::post('/users/authenticate',[UserController::class, 'authenticate'] );
+
 
 
 
