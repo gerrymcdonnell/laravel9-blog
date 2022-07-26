@@ -45,6 +45,11 @@ class ListingController extends Controller
             /*'email'=>['required','email']*/
         ]);
 
+        //if theres an image uploaded store path in db
+        if($request->hasFile('logo')){
+            $formFields['logo']=$request->file('logo')->store('logos','public');
+        }
+
         Listing::create($formFields);
 
         return redirect('./')->with('message','created listing');

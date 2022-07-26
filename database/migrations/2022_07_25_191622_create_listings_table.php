@@ -22,6 +22,8 @@ class CreateListingsTable extends Migration
             $table->string('email')->nullable();
             $table->string('website')->nullable();
             $table->longText('description')->nullable();
+            //file logo
+            $table->string('logo')->nullable();
             $table->timestamps();
         });
     }
