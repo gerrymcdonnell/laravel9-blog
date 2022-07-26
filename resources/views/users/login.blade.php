@@ -20,7 +20,7 @@
                                 type="email"
                                 class="border border-gray-200 rounded p-2 w-full"
                                 name="email"
-                                value="{{old('email')}}"
+                                value="bob@bob.com"
                             />
                             <!--error directive -->
                             @error('email')
