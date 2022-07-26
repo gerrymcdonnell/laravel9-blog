@@ -26,7 +26,7 @@
                 type="text"
                 class="border border-gray-200 rounded p-2 w-full"
                 name="company"
-                value="dfgdsgdfgdfgfd"
+                
             />
             
             <!--error directive -->

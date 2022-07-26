@@ -12,7 +12,7 @@ class ListingController extends Controller
     public function index(){
         return view('listings.index',[
             'heading'=>'Latest listings',
-            'listings'=>Listing::latest()->filter(request(['tag','search']))->get()
+            'listings'=>Listing::latest()->filter(request(['tag','search']))->paginate(6)
         ]);
 
     }
@@ -38,7 +38,7 @@ class ListingController extends Controller
             'description'=>'nullable',
             'email'=>'nullable',
             'tags'=>'nullable',
-            'company'=>'nullable',
+            'company'=>'required',
             'location'=>'nullable',
             'website'=>'nullable'
             /*'company'=>['required',Rule::unique('listings','company')]*/

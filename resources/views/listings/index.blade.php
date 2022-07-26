@@ -22,5 +22,11 @@
         <p>no listings found</p>
     @endunless
 
+</div>
+
+<!--paginate fucntion -->
+<div class="mt-6 p-4">
+    {{$listings->links()}}
+</div>
 
 </x-layout>
