@@ -81,7 +81,7 @@
             {{$slot}}
         </main>
 
-        <x-footer/>
+        <x-footer text='Copyright 2022, All Rights reserved'/>
         
     <x-flash-message></x-flash-message>
 </body>
